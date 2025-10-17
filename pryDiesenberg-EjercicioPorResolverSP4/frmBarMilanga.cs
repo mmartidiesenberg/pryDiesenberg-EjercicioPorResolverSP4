@@ -16,5 +16,19 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
         {
             InitializeComponent();
         }
+
+        private void frmBarMilanga_Load(object sender, EventArgs e)
+        {
+            dgvVentas.Rows.Add("Julio");
+            dgvVentas.Rows.Add("Esteban");
+            dgvVentas.Rows.Add("Javier");
+            dgvVentas.Rows.Add("Gonzalo");
+            dgvVentas.Rows.Add("Alberto");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
