@@ -44,6 +44,7 @@
             this.lblTotalSinAlcohol = new System.Windows.Forms.Label();
             this.lblTotalBebidasCAlcohol = new System.Windows.Forms.Label();
             this.lblTotalPostres = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +98,7 @@
             this.btnValidar.TabIndex = 1;
             this.btnValidar.Text = "Validar Datos";
             this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // btnTotales
             // 
@@ -176,11 +178,23 @@
             this.lblTotalPostres.TabIndex = 9;
             this.lblTotalPostres.Text = "Total Por Postres:";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Location = new System.Drawing.Point(566, 221);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(91, 39);
+            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // frmBarMilanga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 511);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblTotalPostres);
             this.Controls.Add(this.lblTotalBebidasCAlcohol);
             this.Controls.Add(this.lblTotalSinAlcohol);
@@ -218,6 +232,7 @@
         private System.Windows.Forms.Label lblTotalSinAlcohol;
         private System.Windows.Forms.Label lblTotalBebidasCAlcohol;
         private System.Windows.Forms.Label lblTotalPostres;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
 

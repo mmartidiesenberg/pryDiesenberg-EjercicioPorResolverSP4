@@ -17,6 +17,8 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
             InitializeComponent();
         }
 
+        float[,] matVentas = new float[5, 4];
+
         private void frmBarMilanga_Load(object sender, EventArgs e)
         {
             dgvVentas.Rows.Add("Julio");
@@ -29,6 +31,37 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnValidar_Click(object sender, EventArgs e)
+        {
+            for (int indiceFilas = 0; indiceFilas < dgvVentas.Rows.Count; indiceFilas++)
+            {
+                for (int indiceColumnas = 1; indiceColumnas < dgvVentas.Columns.Count; indiceColumnas++) {
+                    {
+                        if (dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value != null)
+                        {
+                            float contenidoCelda =
+                            float.Parse(dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value.ToString());
+
+                            if (float.IsNaN(contenidoCelda))
+                            {
+                                dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value = "no";
+                            }
+                            else
+                            {
+                                dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value = "si";
+                            }
+                        }
+
+                    }
+                }
+            }
         }
     }
 }
