@@ -46,16 +46,15 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
                     {
                         if (dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value != null)
                         {
-                            float contenidoCelda =
-                            float.Parse(dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value.ToString());
-
-                            if (float.IsNaN(contenidoCelda))
+                            string valor = dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value.ToString();
+                            float numero;
+                            if (float.TryParse(valor, out numero))
                             {
-                                dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value = "no";
+                                dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value = "si";
                             }
                             else
                             {
-                                dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value = "si";
+                                dgvVentas.Rows[indiceFilas].Cells[indiceColumnas].Value = "no";
                             }
                         }
 
