@@ -109,6 +109,7 @@
             this.btnTotales.TabIndex = 2;
             this.btnTotales.Text = "Totales";
             this.btnTotales.UseVisualStyleBackColor = true;
+            this.btnTotales.Click += new System.EventHandler(this.btnTotales_Click);
             // 
             // btnMozo
             // 

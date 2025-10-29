@@ -37,7 +37,33 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
         {
             this.Close();
         }
+        private void CalcularTotales()
+        {
+            double totalComida = 0;
+            double totalBebSinAlcohol = 0;
+            double totalBebConAlcohol = 0;
+            double totalPostres = 0;
 
+            foreach (DataGridViewRow fila in dgvVentas.Rows)
+            {
+                if (fila.Cells["colComida"].Value != null)
+                    totalComida += Convert.ToDouble(fila.Cells["colComida"].Value);
+                if (fila.Cells["colBebidaSinAlcohol"].Value != null)
+                    totalBebSinAlcohol += Convert.ToDouble(fila.Cells["colBebidaSinAlcohol"].Value);
+                if (fila.Cells["colBebidaConAlcohol"].Value != null)
+                    totalBebConAlcohol += Convert.ToDouble(fila.Cells["colBebidaConAlcohol"].Value);
+                if (fila.Cells["colPostres"].Value != null)
+                    totalPostres += Convert.ToDouble(fila.Cells["colPostres"].Value);
+            }
+
+            double totalGeneral = totalComida + totalBebSinAlcohol + totalBebConAlcohol + totalPostres;
+
+            lblTotales.Text = totalGeneral.ToString("C");
+            lblTotalComida.Text = totalComida.ToString("C");
+            lblTotalSinAlcohol.Text = totalBebSinAlcohol.ToString("C");
+            lblTotalBebidasCAlcohol.Text = totalBebConAlcohol.ToString("C");
+            lblTotalPostres.Text = totalPostres.ToString("C");
+        }
         private void btnValidar_Click(object sender, EventArgs e)
         {
             for (int indiceFilas = 0; indiceFilas < dgvVentas.Rows.Count; indiceFilas++)
@@ -61,6 +87,11 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
                     }
                 }
             }
+        }
+
+        private void btnTotales_Click(object sender, EventArgs e)
+        {
+            CalcularTotales();
         }
     }
 }
