@@ -13,6 +13,7 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
 {
     public partial class frmBarMilanga : Form
     {
+        float[,] ventas = new float[5, 4]; // ← esta es la matriz global
         public frmBarMilanga()
         {
             InitializeComponent();
@@ -96,6 +97,31 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
             lblTotalSinAlcohol.Text = $"Total Bebidas sin Alcohol: ${totalesPorCategoria[1]}";
             lblTotalBebidasCAlcohol.Text = $"Total Bebidas con Alcohol: ${totalesPorCategoria[2]}";
             lblTotalPostres.Text = $"Total por Postres: ${totalesPorCategoria[3]}";
+        }
+
+        private void btnMozo_Click(object sender, EventArgs e)
+        {
+            float maxTotal = -1;
+            int indiceMozo = -1;
+            string[] nombresMozos = { "Julio", "Esteban", "Javier", "Gonzalo", "Alberto" };
+
+            for (int i = 0; i < 5; i++)
+            {
+                float totalMozo = 0;
+                for (int j = 0; j < 4; j++)
+                {
+                    totalMozo += ventas[i, j];
+                }
+
+                if (totalMozo > maxTotal)
+                {
+                    maxTotal = totalMozo;
+                    indiceMozo = i;
+                }
+            }
+
+            lblMozo.Text = $"Mozo del día: {nombresMozos[indiceMozo]}";
+    
         }
     }
 }

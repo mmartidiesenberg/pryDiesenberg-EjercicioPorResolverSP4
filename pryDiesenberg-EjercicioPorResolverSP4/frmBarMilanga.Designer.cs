@@ -119,6 +119,7 @@
             this.btnMozo.TabIndex = 3;
             this.btnMozo.Text = "Mozo del Día";
             this.btnMozo.UseVisualStyleBackColor = true;
+            this.btnMozo.Click += new System.EventHandler(this.btnMozo_Click);
             // 
             // lblMozo
             // 
