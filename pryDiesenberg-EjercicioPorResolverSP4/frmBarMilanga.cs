@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,33 +38,7 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
         {
             this.Close();
         }
-        private void CalcularTotales()
-        {
-            double totalComida = 0;
-            double totalBebSinAlcohol = 0;
-            double totalBebConAlcohol = 0;
-            double totalPostres = 0;
-
-            foreach (DataGridViewRow fila in dgvVentas.Rows)
-            {
-                if (fila.Cells["colComida"].Value != null)
-                    totalComida += Convert.ToDouble(fila.Cells["colComida"].Value);
-                if (fila.Cells["colBebidaSinAlcohol"].Value != null)
-                    totalBebSinAlcohol += Convert.ToDouble(fila.Cells["colBebidaSinAlcohol"].Value);
-                if (fila.Cells["colBebidaConAlcohol"].Value != null)
-                    totalBebConAlcohol += Convert.ToDouble(fila.Cells["colBebidaConAlcohol"].Value);
-                if (fila.Cells["colPostres"].Value != null)
-                    totalPostres += Convert.ToDouble(fila.Cells["colPostres"].Value);
-            }
-
-            double totalGeneral = totalComida + totalBebSinAlcohol + totalBebConAlcohol + totalPostres;
-
-            lblTotales.Text = totalGeneral.ToString("C");
-            lblTotalComida.Text = totalComida.ToString("C");
-            lblTotalSinAlcohol.Text = totalBebSinAlcohol.ToString("C");
-            lblTotalBebidasCAlcohol.Text = totalBebConAlcohol.ToString("C");
-            lblTotalPostres.Text = totalPostres.ToString("C");
-        }
+        
         private void btnValidar_Click(object sender, EventArgs e)
         {
             for (int indiceFilas = 0; indiceFilas < dgvVentas.Rows.Count; indiceFilas++)
@@ -91,7 +66,36 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
 
         private void btnTotales_Click(object sender, EventArgs e)
         {
-            CalcularTotales();
+            float[,] ventas = new float[5, 4]; // matriz local, se carga desde la grilla
+
+            float totalGeneral = 0;
+            float[] totalesPorCategoria = new float[4]; // 0: Comida, 1: Sin Alcohol, 2: Con Alcohol, 3: Postres
+
+            for (int fila = 0; fila < 5; fila++)
+            {
+                for (int col = 1; col < 5; col++) // columnas 1 a 4 (salteamos "Mozo")
+                {
+                    string celda = dgvVentas.Rows[fila].Cells[col].Value?.ToString().Trim();
+                    float valor = 0;
+
+                    if (!float.TryParse(celda, NumberStyles.Float, CultureInfo.InvariantCulture, out valor))
+                    {
+                        // Si hay error, lo ignoramos y seguimos con 0
+                        valor = 0;
+                    }
+
+                    ventas[fila, col - 1] = valor;
+                    totalesPorCategoria[col - 1] += valor;
+                    totalGeneral += valor;
+                }
+            }
+
+            // Mostrar resultados
+            lblTotales.Text = $"Total General: ${totalGeneral}";
+            lblTotalComida.Text = $"Total por Comida: ${totalesPorCategoria[0]}";
+            lblTotalSinAlcohol.Text = $"Total Bebidas sin Alcohol: ${totalesPorCategoria[1]}";
+            lblTotalBebidasCAlcohol.Text = $"Total Bebidas con Alcohol: ${totalesPorCategoria[2]}";
+            lblTotalPostres.Text = $"Total por Postres: ${totalesPorCategoria[3]}";
         }
     }
 }
