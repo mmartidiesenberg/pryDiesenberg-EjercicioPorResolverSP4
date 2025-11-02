@@ -63,7 +63,7 @@
             this.colBebConAlcohol,
             this.colPostres});
             this.dgvVentas.Location = new System.Drawing.Point(24, 6);
-            this.dgvVentas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvVentas.Margin = new System.Windows.Forms.Padding(6);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.RowHeadersWidth = 82;
             this.dgvVentas.Size = new System.Drawing.Size(1012, 413);
@@ -104,7 +104,7 @@
             // 
             this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValidar.Location = new System.Drawing.Point(1048, 128);
-            this.btnValidar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnValidar.Margin = new System.Windows.Forms.Padding(6);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(142, 75);
             this.btnValidar.TabIndex = 1;
@@ -116,7 +116,7 @@
             // 
             this.btnTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTotales.Location = new System.Drawing.Point(687, 432);
-            this.btnTotales.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnTotales.Margin = new System.Windows.Forms.Padding(6);
             this.btnTotales.Name = "btnTotales";
             this.btnTotales.Size = new System.Drawing.Size(155, 75);
             this.btnTotales.TabIndex = 2;
@@ -127,7 +127,7 @@
             // btnMozo
             // 
             this.btnMozo.Location = new System.Drawing.Point(24, 432);
-            this.btnMozo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMozo.Margin = new System.Windows.Forms.Padding(6);
             this.btnMozo.Name = "btnMozo";
             this.btnMozo.Size = new System.Drawing.Size(155, 75);
             this.btnMozo.TabIndex = 3;
@@ -207,7 +207,7 @@
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(1048, 244);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(6);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(142, 75);
             this.btnCerrar.TabIndex = 10;
@@ -232,8 +232,9 @@
             this.Controls.Add(this.btnTotales);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.dgvVentas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmBarMilanga";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bar Milanga";
