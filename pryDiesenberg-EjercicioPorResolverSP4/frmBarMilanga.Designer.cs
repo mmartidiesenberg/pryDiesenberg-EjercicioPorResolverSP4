@@ -51,6 +51,10 @@
             // dgvVentas
             // 
             this.dgvVentas.AllowUserToAddRows = false;
+            this.dgvVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVentas.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMozo,
@@ -58,43 +62,51 @@
             this.colBebSinAlcohol,
             this.colBebConAlcohol,
             this.colPostres});
-            this.dgvVentas.Location = new System.Drawing.Point(12, 3);
+            this.dgvVentas.Location = new System.Drawing.Point(24, 6);
+            this.dgvVentas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(543, 332);
+            this.dgvVentas.RowHeadersWidth = 82;
+            this.dgvVentas.Size = new System.Drawing.Size(1012, 413);
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colMozo
             // 
             this.colMozo.HeaderText = "Mozo";
+            this.colMozo.MinimumWidth = 10;
             this.colMozo.Name = "colMozo";
             // 
             // colComida
             // 
             this.colComida.HeaderText = "Comida";
+            this.colComida.MinimumWidth = 10;
             this.colComida.Name = "colComida";
             // 
             // colBebSinAlcohol
             // 
             this.colBebSinAlcohol.HeaderText = "Bebida Sin Alcohol";
+            this.colBebSinAlcohol.MinimumWidth = 10;
             this.colBebSinAlcohol.Name = "colBebSinAlcohol";
             // 
             // colBebConAlcohol
             // 
             this.colBebConAlcohol.HeaderText = "Bebida Con Alcohol";
+            this.colBebConAlcohol.MinimumWidth = 10;
             this.colBebConAlcohol.Name = "colBebConAlcohol";
             // 
             // colPostres
             // 
             this.colPostres.HeaderText = "Postres";
+            this.colPostres.MinimumWidth = 10;
             this.colPostres.Name = "colPostres";
             // 
             // btnValidar
             // 
             this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValidar.Location = new System.Drawing.Point(566, 166);
+            this.btnValidar.Location = new System.Drawing.Point(1048, 128);
+            this.btnValidar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnValidar.Name = "btnValidar";
-            this.btnValidar.Size = new System.Drawing.Size(91, 39);
+            this.btnValidar.Size = new System.Drawing.Size(142, 75);
             this.btnValidar.TabIndex = 1;
             this.btnValidar.Text = "Validar Datos";
             this.btnValidar.UseVisualStyleBackColor = true;
@@ -103,9 +115,10 @@
             // btnTotales
             // 
             this.btnTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotales.Location = new System.Drawing.Point(346, 359);
+            this.btnTotales.Location = new System.Drawing.Point(687, 432);
+            this.btnTotales.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnTotales.Name = "btnTotales";
-            this.btnTotales.Size = new System.Drawing.Size(91, 39);
+            this.btnTotales.Size = new System.Drawing.Size(155, 75);
             this.btnTotales.TabIndex = 2;
             this.btnTotales.Text = "Totales";
             this.btnTotales.UseVisualStyleBackColor = true;
@@ -113,9 +126,10 @@
             // 
             // btnMozo
             // 
-            this.btnMozo.Location = new System.Drawing.Point(12, 359);
+            this.btnMozo.Location = new System.Drawing.Point(24, 432);
+            this.btnMozo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnMozo.Name = "btnMozo";
-            this.btnMozo.Size = new System.Drawing.Size(91, 39);
+            this.btnMozo.Size = new System.Drawing.Size(155, 75);
             this.btnMozo.TabIndex = 3;
             this.btnMozo.Text = "Mozo del Día";
             this.btnMozo.UseVisualStyleBackColor = true;
@@ -124,29 +138,35 @@
             // lblMozo
             // 
             this.lblMozo.AutoSize = true;
-            this.lblMozo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMozo.Location = new System.Drawing.Point(126, 359);
+            this.lblMozo.BackColor = System.Drawing.Color.FloralWhite;
+            this.lblMozo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMozo.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblMozo.Location = new System.Drawing.Point(201, 432);
+            this.lblMozo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMozo.Name = "lblMozo";
-            this.lblMozo.Size = new System.Drawing.Size(0, 15);
+            this.lblMozo.Size = new System.Drawing.Size(0, 31);
             this.lblMozo.TabIndex = 4;
             // 
             // lblTotales
             // 
             this.lblTotales.AutoSize = true;
             this.lblTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotales.Location = new System.Drawing.Point(443, 350);
+            this.lblTotales.Location = new System.Drawing.Point(854, 432);
+            this.lblTotales.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotales.Name = "lblTotales";
-            this.lblTotales.Size = new System.Drawing.Size(98, 15);
+            this.lblTotales.Size = new System.Drawing.Size(180, 29);
             this.lblTotales.TabIndex = 5;
             this.lblTotales.Text = "Total General:";
+            this.lblTotales.Click += new System.EventHandler(this.lblTotales_Click);
             // 
             // lblTotalComida
             // 
             this.lblTotalComida.AutoSize = true;
             this.lblTotalComida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalComida.Location = new System.Drawing.Point(443, 372);
+            this.lblTotalComida.Location = new System.Drawing.Point(854, 478);
+            this.lblTotalComida.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalComida.Name = "lblTotalComida";
-            this.lblTotalComida.Size = new System.Drawing.Size(121, 15);
+            this.lblTotalComida.Size = new System.Drawing.Size(223, 29);
             this.lblTotalComida.TabIndex = 6;
             this.lblTotalComida.Text = "Total por Comida:";
             // 
@@ -154,9 +174,10 @@
             // 
             this.lblTotalSinAlcohol.AutoSize = true;
             this.lblTotalSinAlcohol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSinAlcohol.Location = new System.Drawing.Point(443, 397);
+            this.lblTotalSinAlcohol.Location = new System.Drawing.Point(854, 524);
+            this.lblTotalSinAlcohol.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalSinAlcohol.Name = "lblTotalSinAlcohol";
-            this.lblTotalSinAlcohol.Size = new System.Drawing.Size(173, 15);
+            this.lblTotalSinAlcohol.Size = new System.Drawing.Size(318, 29);
             this.lblTotalSinAlcohol.TabIndex = 7;
             this.lblTotalSinAlcohol.Text = "Total Bebidas sin Alcohol:";
             // 
@@ -164,9 +185,10 @@
             // 
             this.lblTotalBebidasCAlcohol.AutoSize = true;
             this.lblTotalBebidasCAlcohol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBebidasCAlcohol.Location = new System.Drawing.Point(443, 423);
+            this.lblTotalBebidasCAlcohol.Location = new System.Drawing.Point(854, 569);
+            this.lblTotalBebidasCAlcohol.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalBebidasCAlcohol.Name = "lblTotalBebidasCAlcohol";
-            this.lblTotalBebidasCAlcohol.Size = new System.Drawing.Size(177, 15);
+            this.lblTotalBebidasCAlcohol.Size = new System.Drawing.Size(326, 29);
             this.lblTotalBebidasCAlcohol.TabIndex = 8;
             this.lblTotalBebidasCAlcohol.Text = "Total Bebidas con Alcohol:";
             // 
@@ -174,18 +196,20 @@
             // 
             this.lblTotalPostres.AutoSize = true;
             this.lblTotalPostres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPostres.Location = new System.Drawing.Point(443, 446);
+            this.lblTotalPostres.Location = new System.Drawing.Point(854, 615);
+            this.lblTotalPostres.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalPostres.Name = "lblTotalPostres";
-            this.lblTotalPostres.Size = new System.Drawing.Size(121, 15);
+            this.lblTotalPostres.Size = new System.Drawing.Size(224, 29);
             this.lblTotalPostres.TabIndex = 9;
             this.lblTotalPostres.Text = "Total Por Postres:";
             // 
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(566, 221);
+            this.btnCerrar.Location = new System.Drawing.Point(1048, 244);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(91, 39);
+            this.btnCerrar.Size = new System.Drawing.Size(142, 75);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -193,9 +217,10 @@
             // 
             // frmBarMilanga
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 511);
+            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.ClientSize = new System.Drawing.Size(1367, 694);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblTotalPostres);
             this.Controls.Add(this.lblTotalBebidasCAlcohol);
@@ -208,7 +233,9 @@
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.dgvVentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmBarMilanga";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bar Milanga";
             this.Load += new System.EventHandler(this.frmBarMilanga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();

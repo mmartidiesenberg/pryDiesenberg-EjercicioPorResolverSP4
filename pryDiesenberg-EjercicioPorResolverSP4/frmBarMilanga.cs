@@ -17,6 +17,7 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
         public frmBarMilanga()
         {
             InitializeComponent();
+            dgvVentas.RowHeadersVisible = false;
         }
 
         float[,] matVentas = new float[5, 4];
@@ -29,6 +30,7 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
             dgvVentas.Rows.Add("Gonzalo");
             dgvVentas.Rows.Add("Alberto");
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -136,6 +138,11 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
 
             // Mostrar resultado
             lblMozo.Text = $"Mozo del Día: {mozoGanador.Key} (${mozoGanador.Value:F2})";
+        }
+
+        private void lblTotales_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
