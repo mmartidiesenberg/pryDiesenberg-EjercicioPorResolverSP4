@@ -101,27 +101,41 @@ namespace pryDiesenberg_EjercicioPorResolverSP4
 
         private void btnMozo_Click(object sender, EventArgs e)
         {
-            float maxTotal = -1;
-            int indiceMozo = -1;
-            string[] nombresMozos = { "Julio", "Esteban", "Javier", "Gonzalo", "Alberto" };
+            // Diccionario para guardar total de cada mozo
+            Dictionary<string, double> totalesPorMozo = new Dictionary<string, double>();
 
-            for (int i = 0; i < 5; i++)
+            foreach (DataGridViewRow fila in dgvVentas.Rows)
             {
-                float totalMozo = 0;
-                for (int j = 0; j < 4; j++)
-                {
-                    totalMozo += ventas[i, j];
-                }
+                if (fila.IsNewRow) continue; // Saltear la fila vacía al final
 
-                if (totalMozo > maxTotal)
-                {
-                    maxTotal = totalMozo;
-                    indiceMozo = i;
-                }
+                string mozo = fila.Cells["colMozo"].Value?.ToString();
+                if (string.IsNullOrEmpty(mozo)) continue;
+
+                double comida = Convert.ToDouble(fila.Cells["colComida"].Value ?? 0);
+                double sinAlcohol = Convert.ToDouble(fila.Cells["colBebSinAlcohol"].Value ?? 0);
+                double conAlcohol = Convert.ToDouble(fila.Cells["colBebConAlcohol"].Value ?? 0);
+                double postres = Convert.ToDouble(fila.Cells["colPostres"].Value ?? 0);
+
+                double totalFila = comida + sinAlcohol + conAlcohol + postres;
+
+                if (totalesPorMozo.ContainsKey(mozo))
+                    totalesPorMozo[mozo] += totalFila;
+                else
+                    totalesPorMozo.Add(mozo, totalFila);
             }
 
-            lblMozo.Text = $"Mozo del día: {nombresMozos[indiceMozo]}";
-    
+            // Verificar si hay datos
+            if (totalesPorMozo.Count == 0)
+            {
+                MessageBox.Show("No hay datos cargados para calcular el mozo del día.");
+                return;
+            }
+
+            // Buscar el mozo con mayor total
+            var mozoGanador = totalesPorMozo.OrderByDescending(x => x.Value).First();
+
+            // Mostrar resultado
+            lblMozo.Text = $"Mozo del Día: {mozoGanador.Key} (${mozoGanador.Value:F2})";
         }
     }
 }
